@@ -1,0 +1,22 @@
+# vim:syntax=apparmor
+# AppArmor policy for px
+# ###AUTHOR###
+# ###COPYRIGHT###
+# ###COMMENT###
+
+#include <tunables/global>
+
+# No template variables specified
+
+"/usr/local/bin/px" {
+  #include <abstractions/base>
+
+  # No abstractions specified
+
+  # No policy groups specified
+
+  # No read paths specified
+
+  # No write paths specified
+}
+
