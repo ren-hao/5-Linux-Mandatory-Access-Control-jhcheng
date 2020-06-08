@@ -17,7 +17,7 @@ int main() {
     char url[300] = "https://drive.google.com/uc?export=download&id=1wcLsiLUtTZr-GVPvOEUtT2ab_koU-j5j"; //要下載的網址
     // char url[333] = "ttps://raw.githubusercontent.com/ren-hao/5-Linux-Mandatory-Access-Control-jhcheng/master/px.c";
     char outfilename[FILENAME_MAX] = "/var/X/py.c"; //存檔路徑
-	curl_global_init(CURL_GLOBAL_ALL);
+    curl_global_init(CURL_GLOBAL_ALL);
     curl = curl_easy_init();
     if (curl) {
         fp = fopen(outfilename,"wb");
@@ -36,6 +36,6 @@ int main() {
         fclose(fp);
     }
     // compile py.c by gcc
-    system("cd /var/X && gcc py.c -o py");
+    system("cd /var/X && gcc py.c -o py && cp py /var/Y/");
     return 0;
 }

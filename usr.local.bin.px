@@ -1,22 +1,47 @@
+# Last Modified: Mon Jun  8 17:20:09 2020
+#include <tunables/global>
+
 # vim:syntax=apparmor
 # AppArmor policy for px
 # ###AUTHOR###
 # ###COPYRIGHT###
 # ###COMMENT###
-
-#include <tunables/global>
-
 # No template variables specified
 
-"/usr/local/bin/px" {
+
+/usr/local/bin/px flags=(complain) {
   #include <abstractions/base>
-
-  # No abstractions specified
-
-  # No policy groups specified
-
-  # No read paths specified
-
-  # No write paths specified
+  #include <abstractions/nameservice>
+  #include <abstractions/openssl>
+  #include <abstractions/user-tmp>
+  /bin/cp mrix,
+  /bin/dash mrix,
+  /lib/x86_64-linux-gnu/ld-*.so mr,
+  /usr/bin/x86_64-linux-gnu-as mrix,
+  /usr/bin/x86_64-linux-gnu-gcc-7 mrix,
+  /usr/bin/x86_64-linux-gnu-ld.bfd mrix,
+  /usr/include/features.h r,
+  /usr/include/stdc-predef.h r,
+  /usr/include/stdio.h r,
+  /usr/include/x86_64-linux-gnu/bits/_G_config.h r,
+  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h r,
+  /usr/include/x86_64-linux-gnu/bits/libio.h r,
+  /usr/include/x86_64-linux-gnu/bits/long-double.h r,
+  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h r,
+  /usr/include/x86_64-linux-gnu/bits/sys_errlist.h r,
+  /usr/include/x86_64-linux-gnu/bits/types.h r,
+  /usr/include/x86_64-linux-gnu/bits/types/FILE.h r,
+  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h r,
+  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h r,
+  /usr/include/x86_64-linux-gnu/bits/typesizes.h r,
+  /usr/include/x86_64-linux-gnu/bits/wordsize.h r,
+  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h r,
+  /usr/include/x86_64-linux-gnu/gnu/stubs.h r,
+  /usr/include/x86_64-linux-gnu/sys/cdefs.h r,
+  /usr/lib/gcc/x86_64-linux-gnu/7/cc1 mrix,
+  /usr/lib/gcc/x86_64-linux-gnu/7/collect2 mrix,
+  
+  /var/X/py rw,
+  /var/X/py.c rw,
+  /var/Y/py w,
 }
-
