@@ -11,12 +11,8 @@
 "/var/Y/py" {
   #include <abstractions/base>
 
-  # No abstractions specified
-
-  # No policy groups specified
-
-  # No read paths specified
-
-  # No write paths specified
+  /var/Y/* rw,
+  deny network inet,
+  deny network inet6,
+  deny network raw,
 }
-
