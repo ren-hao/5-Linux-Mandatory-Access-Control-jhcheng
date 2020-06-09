@@ -22,6 +22,24 @@ To make the grading process more manageable, please work on your policy from a f
 [1]: https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/index
 [2]: https://wiki.ubuntu.com/AppArmor
 
+# Install libcurl on Ubuntu
+
+wget https://curl.haxx.se/download/curl-7.54.1.tar.gz
+
+tar zxvf curl-7.54.1.tar.gz
+
+cd curl-7.54.1
+
+./configure  (if you have specific compiler, use ./configure CC=gcc-7, you can change "gcc-7" to what you want)
+
+make
+
+make test
+
+sudo make install
+
+
+
 # note
 
 sudo aa-status
@@ -29,6 +47,8 @@ sudo aa-status
 sudo aa-logprof
 
 sudo apparmor_parser -r usr.local.bin.px/var.Y.py
+
+sudo apparmor_parser -r var.Y.py
 
 sudo aa-complain usr.local.bin.px/var.Y.py
 
