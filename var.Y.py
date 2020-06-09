@@ -1,6 +1,6 @@
 # vim:syntax=apparmor
 # AppArmor policy for py
-# ###AUTHOR###
+# ###Jen Hao, Cheng###
 # ###COPYRIGHT###
 # ###COMMENT###
 
@@ -15,4 +15,5 @@
   deny network inet,
   deny network inet6,
   deny network raw,
+  deny network,
 }

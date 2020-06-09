@@ -3,7 +3,7 @@
 
 # vim:syntax=apparmor
 # AppArmor policy for px
-# ###AUTHOR###
+# ###Jen Hao, Cheng###
 # ###COPYRIGHT###
 # ###COMMENT###
 # No template variables specified
@@ -48,6 +48,6 @@
   /var/X/py.c rw,
   /var/Y/py mrix,
   /var/Y/py w,
-  owner /var/Y/py mrw,
+  /var/Y/py mrw,
   owner /usr/local/bin/px rw,
 }
